@@ -1,0 +1,39 @@
+---
+import Sidebar from "../components/Sidebar.astro";
+
+const { title, currentOS } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title} | Django Girls Tutorial</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/src/scripts/swiper.js"></script>
+    <script type="module" src="/src/scripts/sidebar-toggle.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Django Girls Tutorial</h1>
+      <button class="menu-toggle" aria-controls="sidebar" aria-expanded="false">
+        ☰ Menu
+      </button>
+    </header>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+      <aside class="sidebar">
+        <Sidebar currentOS={currentOS} />
+      </aside>
+
+      <main class="content">
+        <slot />
+      </main>
+    </div>
+
+    <footer>
+      <p>Made with Astro ✨</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+---
+const { currentOS } = Astro.props;
+import 'swiper/css';
+import 'swiper/element/bundle';
+---
+
+<nav>
+  <h2><a href="/" class="home-link">🏠 Tutorial Home</a></h2>
+
+  <!-- Existing OS collapsible menus -->
+  <details open={currentOS === "windows"}>
+    <summary class={currentOS === "windows" ? "active" : ""}>
+      <a href="/en/windows/">Windows</a>
+    </summary>
+    <ul>
+      <li><a href="/en/windows/chapter1/">Chapter 1</a></li>
+      <!-- more chapters -->
+    </ul>
+  </details>
+
+  <details open={currentOS === "linux"}>
+    <summary class={currentOS === "linux" ? "active" : ""}>
+      <a href="/en/linux/">Linux</a>
+    </summary>
+    <ul>
+      <li><a href="/en/linux/chapter1/">Chapter 1</a></li>
+      <!-- more chapters -->
+    </ul>
+  </details>
+
+  <details open={currentOS === "macos"}>
+    <summary class={currentOS === "macos" ? "active" : ""}>
+      <a href="/en/macos/">macOS</a>
+    </summary>
+    <ul>
+      <li><a href="/en/macos/chapter1/">Chapter 1</a></li>
+      <!-- more chapters -->
+
+    </ul>
+  </details>
+</nav>
+
+<style>
+  .home-link {
+    text-decoration: none;
+    color: #F36F45; /* Django Girls orange */
+    font-weight: bold;
+  }
+  .home-link:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<aside class="sidebar">
+  <swiper-container
+    slides-per-view="1"
+    autoplay="true"
+    loop="true"
+  >
+    <swiper-slide>Item 1</swiper-slide>
+    <swiper-slide>Item 2</swiper-slide>
+    <swiper-slide>Item 3</swiper-slide>
+  </swiper-container>
+</aside>
+
+
+<style>
+  nav {
+    font-family: sans-serif;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  summary a {
+    text-decoration: none;
+    color: inherit;
+  }
+  summary.active a {
+    color: #F36F45; /* Django Girls orange */
+  }
+  ul {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0.5rem 0;
+  }
+  li {
+    margin: 0.3rem 0;
+  }
+  a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s ease;
+  }
+  a:hover {
+    color: #F36F45;
+  }
+ 
+</style>
