@@ -4,6 +4,10 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    include: ['tests/**/*.unit.test.ts'], 
+    alias: {
+      './image.png': '/tests/__mocks__/image.png',
+    },
+    include: ['tests/**/*.unit.test.ts'],
+    exclude: ['e2e/**'],
   },
 });
