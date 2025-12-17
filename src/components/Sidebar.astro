@@ -8,6 +8,16 @@ import 'swiper/element/bundle';
   <h2><a href="/" class="home-link">🏠 Tutorial Home</a></h2>
 
   <!-- Existing OS collapsible menus -->
+  <details open={currentOS === "chromebook"}>
+    <summary class={currentOS === "chromebook" ? "active" : ""}>
+      <a href="/en/chromebook/">Chromebook</a>
+    </summary>
+    <ul>
+      <li><a href="/en/chromebook/chapter1/">Chapter 1</a></li>
+      <!-- more chapters -->
+    </ul>
+  </details>
+
   <details open={currentOS === "linux"}>
     <summary class={currentOS === "linux" ? "active" : ""}>
       <a href="/en/linux/">Linux</a>
@@ -34,8 +44,12 @@ import 'swiper/element/bundle';
       <a href="/en/windows/">Windows</a>
     </summary>
     <ul>
-      <li><a href="/en/windows/chapter1/">Chapter 1</a></li>
-      <!-- more chapters -->
+      <li><a href="/en/windows/01_how_the_internet_works/">How the Internet works</a></li>
+      <li><a href="/en/windows/02_intro_to_command_line/">Introduction to Command Line</a></li>
+      <li><a href="/en/windows/03_python_installation/">Python Installation</a></li>
+      <li><a href="/en/common/04_code_editor/">Code Editor</a></li>
+      <li><a href="/en/windows/05_python_introduction/">Python Introduction</a></li>
+      <li><a href="/en/common/06_django/">What is Django?</a></li>
     </ul>
   </details>
 </nav>

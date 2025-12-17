@@ -1,0 +1,94 @@
+---
+layout: ../../../layouts/TutorialLayout.astro
+title: Django Girls Tutorial (Chromebook)
+currentOS: chromebook
+---
+
+# If you're doing the tutorial at home
+
+If you're doing the tutorial at home, not at one of the [Django Girls events](https://djangogirls.org/events/), 
+you can completely skip this chapter now and go straight to the [How the Internet works](../how_the_internet_works/README.md) chapter.
+
+This is because we cover installing things as they are needed in the tutorial -- this is 
+just an additional page that gathers all of the installation instructions in one place 
+(which is useful for some workshop formats). You can choose to install everything that is 
+on this page right now if you wish. But if you want to start learning things before 
+installing a bunch of stuff on your computer, skip this chapter and we will explain the 
+installation parts to you later on, as they are needed.
+
+Good luck!
+
+# If you're attending a workshop
+
+If you are attending one of the [Django Girls events](https://djangogirls.org/events/):
+- Your workshop may have an "installation party" before the main workshop. If you are at 
+an installation party, this page is for you! Follow the instructions here to get everything you need for the workshop installed, with the help of the coaches if needed. Then at the main workshop, you'll be able to skip installation instructions you'll encounter in the main tutorial when you get to them.
+- The organizers of your workshop may have asked you to try at home to install everything 
+on your computer before the workshop starts. If you have been asked to do that, this page 
+is for you! Follow the instructions here, as best you can. Then at the main workshop, 
+when you get to an installation step in the main tutorial, if you were not able to get 
+that piece installed you can get help from your coach.
+- If your workshop does not have an installation party (or you couldn't attend), and if 
+the organizers didn't ask you to try to install everything before you arrived, skip this 
+page and go straight to the [How the Internet works](../how_the_internet_works/README.md) 
+chapter. You'll be installing everything you need as you work through the tutorial.
+
+# Installation
+In this tutorial you will be building a blog. In order to do that, as you go through the 
+tutorial you'll be instructed on how to
+install various software on your computer and set up some online accounts as needed 
+(if you are using local desktop environment) or instructed on how to create online 
+accounts only (if you are using cloud development). This page gathers all of the 
+installation and sign-up instructions in one place (which is useful for some workshop 
+formats).
+
+# Chromebook Installation
+For people using a Chromebook or those with limited memory on their laptops, we recommend 
+using a cloud IDE environment. This allows you to interact with the command line, Python, and Django 
+directly through your browser, where a code editor is already installed. In case you using this 
+instruction, some steps of the tutorial don't have to be done again 
+("Deploy/Git" [part](https://tutorial.djangogirls.org/en/deploy/#installing-git) ). You’ll find a more 
+detailed explanation in the “Deploy/Git” section.
+
+Your installation experience will be a little different.
+
+To set up your Chromebook, follow the instructions below:
+
+1. **Go to [GitHub.com](https://github.com)** and sign up for a new, free user account. Be sure to 
+remember your password (add it to your password manager, if you use one).
+
+2. **Create a GitHub project**. Visit [this](https://github.com/new) link, use "my-first-blog" name 
+for your project, and make it public (needed for deployment, you can make it private later). Also, 
+add a `README.md` and `.gitignore` file.
+
+    ![](/images/create-new-repo.png)
+
+3. **Start a Codespace**. Go to GitHub [Codespaces](https://github.com/codespaces/new) and select the 
+repository you just created. Click "Create Codespace".
+
+    ![](/images/create-new-codespace.png)
+
+    Wait a little bit and you'll see something like that:
+
+    ![](/images/codespace-preview.png)
+
+    The [VSCode](https://code.visualstudio.com) editor will open for you automatically. If you see a 
+    notification that says "Install Python", please click on it. If not prompted, click the "Extensions" 
+    icon on the left sidebar in the Codespace editor. Search for "Python" and click "Install."
+
+    ![](/images/vscode-install-python.png)
+
+    The bash terminal (similar to Linux) is at the bottom of the page.
+
+    ![](/images/codespace-preview.png)
+
+    By default, the GitHub Codespace environment will be deleted after 1 month (this applies only to the 
+    environment, not your code). To prevent auto-deletion, you can adjust the settings on the page: 
+    https://github.com/codespaces 
+
+    ![](/images/codespace-auto-delete-off.png)
+
+4. **Continue with the tutorial**. Follow the next steps from the section [Set up virtual environment 
+and install Django](https://tutorial.djangogirls.org/en/installation/#virtualenv).
+    Follow than sections for Ubuntu/Linux. Use the Codespaces command line (terminal), accessible 
+    through your browser.
