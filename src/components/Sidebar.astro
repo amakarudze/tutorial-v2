@@ -8,6 +8,13 @@ import 'swiper/element/bundle';
   <h2><a href="/" class="home-link">🏠 Tutorial Home</a></h2>
 
   <!-- Existing OS collapsible menus -->
+  <details open={currentOS === "all"}>
+    <summary class={currentOS === "call" ? "active" : ""}>
+      <a href="/en/installation/">Installation</a>
+    </summary>
+  </details>
+
+  <!-- Existing OS collapsible menus -->
   <details open={currentOS === "chromebook"}>
     <summary class={currentOS === "chromebook" ? "active" : ""}>
       <a href="/en/chromebook/">Chromebook</a>
