@@ -18,6 +18,6 @@ test.describe('Homepage language selection', () => {
 
     // Assert that the English homepage heading is visible
    await expect(
-  page.getByRole('heading', { name: 'Django Girls Tutorial', exact: true })).toBeVisible();
+  page.getByRole('heading', { name: 'Welcome', exact: true })).toBeVisible();
   });
 });

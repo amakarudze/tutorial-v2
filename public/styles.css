@@ -1,69 +1,30 @@
-/* Global reset */
+/* -----------------------------------------------------
+   Global Reset & Base
+----------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Shared base styles */
 html, body {
   height: 100%;
-  margin: 0;
-  font-family: sans-serif;
+  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
   background: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
 }
 
-header, footer {
-  background: #F36F45; /* Django Girls orange */
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-footer {
-  position: fixed; /* always visible */
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-/* Tutorial page layout */
-.container {
-  display: grid;
-  grid-template-columns: 250px 1fr; /* sidebar + main content */
-  min-height: calc(100vh - 100px); /* account for header/footer height */
-}
-
-.sidebar {
-  padding: 1rem;
-  background: #fff;
-  border-right: 1px solid #ddd;
-}
-
-.content {
-  padding: 2rem;
-  overflow-y: auto;
-}
-
-/* Tutorial page layout */
-.container {
-  display: grid;
-  grid-template-columns: 250px 1fr; /* sidebar + main content */
-  min-height: calc(100vh - 100px); /* account for header/footer height */
-}
-
-.sidebar {
-  padding: 1rem;
-  background: #fff;
-  border-right: 1px solid #ddd;
-}
-
-.content {
-  padding: 2rem;
-  overflow-y: auto;
+.homepage-container {
+  max-width: 1200px;   /* limit the width */
+  margin: 0 auto;      /* center horizontally */
+  padding: 0 2rem;     /* space on left/right */
 }
 
 
+/* -----------------------------------------------------
+   Page Wrapper & Sticky Footer
+----------------------------------------------------- */
 .page {
   display: flex;
   flex-direction: column;
@@ -71,25 +32,18 @@ footer {
 }
 
 main {
-  flex: 1; /* takes up remaining space */
+  flex: 1; /* grows with content, pushes footer down if short */
 }
 
 footer {
-  background: #f1f1f1;
-  padding: 1rem;
-  text-align: center;
+  margin-top: auto; /* footer at bottom when content is short */
 }
 
-body {
-  font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
-  background: #fdfdfd;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Header & Footer */
+/* -----------------------------------------------------
+   Header & Footer
+----------------------------------------------------- */
 header, footer {
-  background: #F36F45;
+  background: #C25100; /* Django Girls orange */
   color: white;
   padding: 1rem;
   text-align: center;
@@ -100,44 +54,115 @@ header h1 {
   font-size: 1.8rem;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #F36F45; /* Django Girls orange */
+.logo a {
+  text-decoration: none;
   color: white;
-  padding: 1rem;
-  text-align: center;
 }
 
-/* Layout container */
+/* -----------------------------------------------------
+   Layout Container (Desktop)
+----------------------------------------------------- */
 .container {
-  display: flex;
-  min-height: calc(100vh - 120px); /* account for header/footer */
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: calc(100vh - 120px); /* header + footer height */
 }
 
-/* Sidebar */
+/* -----------------------------------------------------
+   Sidebar
+----------------------------------------------------- */
 .sidebar {
   width: 250px;
+  padding: 1rem;
   background: #f4f4f4;
-  padding: 1.5rem;
   border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Sidebar carousel */
+.sidebar swiper-container {
+  width: 220px;
+  height: 200px;
+  margin-bottom: 1rem;
+}
+
+.sidebar swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Sidebar menu */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar details {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.sidebar summary {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none;
+}
+
+.sidebar summary.active {
+  background: #C25100;
+  color: white;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0.5rem 1rem;
+}
+
+.sidebar a {
+  color: #333;
+  text-decoration: none;
 }
 
 .sidebar a:hover {
-  color: #F36F45;
+  text-decoration: underline;
 }
 
-.sidebar .active a {
-  font-weight: bold;
-  color: #F36F45;
+/* -----------------------------------------------------
+   Main Content
+----------------------------------------------------- */
+p {
+  margin: 1rem 0; /* adds vertical space above and below */
+  line-height: 1.6; /* improves readability */
 }
 
-/* Main content */
+pre code {
+  background: #f4f4f4; /* light gray */
+  color: #333;         /* dark text */
+}
+
+/* Global image styling */
+img {
+  max-width: 100%;   /* never exceed the container width */
+  height: auto;      /* maintain aspect ratio */
+  display: block;    /* removes inline spacing issues */
+  margin: 0 auto;    /* optional: center images */
+}
+
 .content {
   flex: 1;
   padding: 2rem;
+  max-width: 100ch; 
+  margin: 0 auto;        /* center on page */
+  word-wrap: break-word; /* prevent overflow */
 }
 
 .content h1, .content h2, .content h3 {
@@ -160,9 +185,8 @@ footer {
   overflow-x: auto;
 }
 
-/* Links inside content */
 .content a {
-  color: #F36F45;
+  color: #C25100;
   text-decoration: none;
 }
 
@@ -170,243 +194,103 @@ footer {
   text-decoration: underline;
 }
 
+/* Language selector */
 .language-selector {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem; /* adds spacing between items */
+  gap: 1rem;
   padding: 1rem;
 }
 
 .language-selector button {
   padding: 0.75rem;
-  text-align: center;
   border: 1px solid #ccc;
-  border-radius: 6px;
   background: #f9f9f9;
+  border-radius: 6px;
   cursor: pointer;
+  text-align: center;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: sans-serif;
-    background: #fdfdfd;
-  }
-
-  .page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* full viewport height */
-  }
-
-  header, footer {
-    background: #F36F45; /* Django Girls orange */
-    color: white;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .logo a {
-    text-decoration: none;
-    color: white;
-  }
-
-  .homepage-content {
-    flex: 1; /* pushes footer down */
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem;
-  }
-
-.sidebar {
-  width: 250px;
-  padding: 1rem;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* centers children horizontally */
-}
-
-.sidebar swiper-container {
-  width: 220px;          /* narrower than sidebar */
-  height: 200px;
-  margin-bottom: 1rem;   /* spacing before menus */
-}
-
-.sidebar swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-.sidebar nav {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.sidebar details {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: #fff;
-  overflow: hidden;
-}
-
-.sidebar summary {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  list-style: none; /* removes default arrow marker */
-}
-
-.sidebar summary.active {
-  background: #F36F45; /* Django Girls orange */
-  color: white;
-}
-
-.sidebar ul {
-  margin: 0;
-  padding: 0.5rem 1rem;
-  list-style: none;
-}
-
-.sidebar li {
-  margin: 0.25rem 0;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: #333;
-}
-
-.sidebar a:hover {
-  text-decoration: underline;
-}
-
-/* Default desktop/tablet layout */
-.container {
-  display: grid;
-  grid-template-columns: 250px 1fr; /* sidebar + content */
-  min-height: calc(100vh - 100px);
-}
-
-/* Mobile layout */
-@media (max-width: 768px) {
-  .container {
-    display: flex;
-    flex-direction: column; /* stack sidebar above content */
-  }
-
-  .sidebar {
-    width: 100%;            /* full width on mobile */
-    padding: 1rem;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-    align-items: center;    /* keep carousel + menus centered */
-  }
-
-  .sidebar swiper-container {
-    width: 100%;            /* expand carousel to full width */
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;    /* keep a nice shape */
-    margin-bottom: 1rem;
-  }
-
-  .content {
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar details {
-    width: 100%;
-  }
-}
-
-/* Hide toggle on desktop */
+/* -----------------------------------------------------
+   Mobile Sidebar & Toggle
+----------------------------------------------------- */
 .menu-toggle {
   display: none;
-  background: #F36F45;
+  background: #C25100;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   cursor: pointer;
+  z-index: 1100;
 }
 
-/* Mobile layout */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: inline-block; /* show hamburger */
-  }
-
-  .container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    display: none; /* hidden by default */
-    width: 100%;
-    padding: 1rem;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .sidebar.open {
-    display: block; /* show when toggled */
-  }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 900;
 }
 
-/* Mobile sidebar hidden by default */
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;              /* take most of the screen */
-    max-width: 300px;
-    height: 100%;
-    background: #fff;
-    box-shadow: 2px 0 6px rgba(0,0,0,0.2);
-    transform: translateX(-100%); /* hidden off-screen */
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
-    overflow-y: auto;
-  }
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
 
-  .sidebar.open {
-    transform: translateX(0); /* slide in */
-  }
+/* -----------------------------------------------------
+   Responsive: Mobile Layout
+----------------------------------------------------- */
+@media (max-width: 768px) {
 
   .menu-toggle {
     display: inline-block;
-    background: #F36F45;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    z-index: 1100; /* above sidebar */
   }
 
-  /* Dark overlay behind sidebar */
-  .overlay {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Slide-in Sidebar */
+  .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
+    max-width: 300px;
     height: 100%;
-    background: rgba(0,0,0,0.4);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-    z-index: 900;
+    background: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+    padding: 1rem;
   }
 
-  .overlay.active {
-    opacity: 1;
-    pointer-events: auto;
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar swiper-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar details {
+    width: 100%;
+  }
+
+  .content {
+    padding: 1rem;
   }
 }

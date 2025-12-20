@@ -14,7 +14,11 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.12",
+    "@astrojs/react": "^4.4.2",
     "@astrojs/starlight": "^0.37.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.1",
     "astro": "^5.6.1",
     "flag-icons": "^7.5.0",
     "sharp": "^0.34.2",

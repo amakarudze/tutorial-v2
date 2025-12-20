@@ -8,12 +8,19 @@ import 'swiper/element/bundle';
   <h2><a href="/" class="home-link">🏠 Tutorial Home</a></h2>
 
   <!-- Existing OS collapsible menus -->
-  <details open={currentOS === "windows"}>
-    <summary class={currentOS === "windows" ? "active" : ""}>
-      <a href="/en/windows/">Windows</a>
+  <details open={currentOS === "all"}>
+    <summary class={currentOS === "call" ? "active" : ""}>
+      <a href="/en/installation/">Installation</a>
+    </summary>
+  </details>
+
+  <!-- Existing OS collapsible menus -->
+  <details open={currentOS === "chromebook"}>
+    <summary class={currentOS === "chromebook" ? "active" : ""}>
+      <a href="/en/chromebook/">Chromebook</a>
     </summary>
     <ul>
-      <li><a href="/en/windows/chapter1/">Chapter 1</a></li>
+      <li><a href="/en/chromebook/chapter1/">Chapter 1</a></li>
       <!-- more chapters -->
     </ul>
   </details>
@@ -38,12 +45,42 @@ import 'swiper/element/bundle';
 
     </ul>
   </details>
+
+  <details open={currentOS === "windows"}>
+    <summary class={currentOS === "windows" ? "active" : ""}>
+      <a href="/en/windows/">Windows</a>
+    </summary>
+    <ul>
+      <li><a href="/en/windows/01_how_the_internet_works/">How the Internet works</a></li>
+      <li><a href="/en/windows/02_intro_to_command_line/">Introduction to command line</a></li>
+      <li><a href="/en/windows/03_python_installation/">Python installation</a></li>
+      <li><a href="/en/common/04_code_editor/">Code editor</a></li>
+      <li><a href="/en/windows/05_python_introduction/">Python introduction</a></li>
+      <li><a href="/en/common/06_django/">What is Django?</a></li>
+      <li><a href="/en/windows/07_django_installation/">Django installation</a></li>
+      <li><a href="/en/windows/08_django_start_project/">Your first Django project!</a></li>
+      <li><a href="/en/windows/09_django_models/">Django models</a></li>
+      <li><a href="/en/windows/10_django_admin/">Django admin</a></li>
+      <li><a href="/en/windows/11_deploy/">Deploy!</a></li>
+      <li><a href="/en/common/12_django_urls/">Django URLs</a></li>
+      <li><a href="/en/common/13_django_views/">Django views - time to create!</a></li>
+      <li><a href="/en/common/14_html/">Introduction to HTML</a></li>
+      <li><a href="/en/common/15_django_orm">Django ORM (Querysets)</a></li>
+      <li><a href="/en/common/16_dynamic_data_in_templates/">Dynamic data in templates</a></li>
+      <li><a href="/en/common/17_django_templates/">Django templates</a></li>
+      <li><a href="/en/common/18_css/">CSS - make it pretty!</a></li>
+      <li><a href="/en/common/19_template_extending/">Template extending</a></li>
+      <li><a href="/en/common/20_extend_your_application/">Extend your application</a></li>
+      <li><a href="/en/common/21_django_forms/">Django forms</a></li>
+      <li><a href="/en/common/22_whats_next/">What's next?</a></li>
+    </ul>
+  </details>
 </nav>
 
 <style>
   .home-link {
     text-decoration: none;
-    color: #F36F45; /* Django Girls orange */
+    color: ##C25100; /* Django Girls orange */
     font-weight: bold;
   }
   .home-link:hover {
@@ -78,7 +115,7 @@ import 'swiper/element/bundle';
     color: inherit;
   }
   summary.active a {
-    color: #F36F45; /* Django Girls orange */
+    color: #C25100; /* Django Girls orange */
   }
   ul {
     list-style: none;
@@ -94,7 +131,7 @@ import 'swiper/element/bundle';
     transition: color 0.2s ease;
   }
   a:hover {
-    color: #F36F45;
+    color: #C25100;
   }
  
 </style>
