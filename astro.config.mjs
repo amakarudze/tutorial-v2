@@ -6,7 +6,7 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   output: 'static',
   site: 'https://tutorial-v2.djangogirls.org/',
-  base: '/',
+  base: '/tutorial-v2',
   integrations: [
     react(), 
     mdx()
