@@ -8,7 +8,7 @@ const isProd = process.env.GITHUB_PAGES === 'true';
 export default defineConfig({
   output: 'static',
   site: isProd
-    ? 'https://djangogirls.github.io/tutorial-v2/'
+    ? 'https://tutorial-v2.djangogirls.org/tutorial-v2/'
     : 'http://localhost:4321',
   base: isProd ? '/tutorial-v2/' : '/',
   integrations: [
