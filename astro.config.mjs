@@ -3,10 +3,14 @@ import { defineConfig } from 'astro/config';
 import react from "@astrojs/react";
 import mdx from '@astrojs/mdx';
 
+const isProd = process.env.GITHUB_PAGES === 'true';
+
 export default defineConfig({
   output: 'static',
-  site: 'https://tutorial-v2.djangogirls.org/',
-  base: '/tutorial-v2',
+  site: isProd
+    ? 'https://yourname.github.io/repo-name'
+    : 'http://localhost:4321',
+  base: isProd ? '/repo-name' : '/',
   integrations: [
     react(), 
     mdx()
