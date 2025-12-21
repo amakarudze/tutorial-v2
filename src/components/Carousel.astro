@@ -1,6 +1,12 @@
 ---
-import '../scripts/swiper.js';
+import { register } from 'swiper/element/bundle';
+import swiperStyles from 'swiper/swiper-bundle.css?inline';
+
+register();
 ---
+<style>
+  {swiperStyles}
+</style>
 
 <swiper-container
   slides-per-view="1"
