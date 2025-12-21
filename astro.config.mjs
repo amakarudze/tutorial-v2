@@ -8,9 +8,9 @@ const isProd = process.env.GITHUB_PAGES === 'true';
 export default defineConfig({
   output: 'static',
   site: isProd
-    ? 'https://yourname.github.io/repo-name'
+    ? 'https://yourname.github.io/tutorial-v2/'
     : 'http://localhost:4321',
-  base: isProd ? '/repo-name' : '/',
+  base: isProd ? '/tutorial-v2/' : '/',
   integrations: [
     react(), 
     mdx()
